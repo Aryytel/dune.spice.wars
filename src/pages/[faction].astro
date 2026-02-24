@@ -270,7 +270,7 @@ const buildingsByCategory = BUILDING_CATEGORY_ORDER
 				<>
 					<h4 id={`dev-${g.tree}`}>{g.label}</h4>
 					{g.items.map((d) => (
-						<DevelopmentCard development={d} />
+						<DevelopmentCard development={d} treeHref="#developments" />
 					))}
 				</>
 			))
@@ -337,20 +337,30 @@ const buildingsByCategory = BUILDING_CATEGORY_ORDER
 </style>
 
 <script>
+	function showFactionTreeTab(treeId: string) {
+		document.querySelectorAll('.tree-tab').forEach(t => {
+			t.classList.remove('is-active');
+			t.setAttribute('aria-selected', 'false');
+		});
+		document.querySelectorAll('.tree-panel').forEach(p => p.classList.remove('is-active'));
+		const tab = document.querySelector<HTMLButtonElement>(`.tree-tab[data-tree="${treeId}"]`);
+		tab?.classList.add('is-active');
+		tab?.setAttribute('aria-selected', 'true');
+		const panel = document.getElementById(`ftree-${treeId}`);
+		panel?.classList.add('is-active');
+		panel?.querySelector<HTMLElement>('.dev-tree')
+			?.dispatchEvent(new CustomEvent('tree:show'));
+	}
+
 	document.querySelectorAll<HTMLButtonElement>('.tree-tab').forEach((tab) => {
 		tab.addEventListener('click', () => {
-			const treeId = tab.dataset.tree!;
-			document.querySelectorAll('.tree-tab').forEach(t => {
-				t.classList.remove('is-active');
-				t.setAttribute('aria-selected', 'false');
-			});
-			document.querySelectorAll('.tree-panel').forEach(p => p.classList.remove('is-active'));
-			tab.classList.add('is-active');
-			tab.setAttribute('aria-selected', 'true');
-			const panel = document.getElementById(`ftree-${treeId}`);
-			panel?.classList.add('is-active');
-			panel?.querySelector<HTMLElement>('.dev-tree')
-				?.dispatchEvent(new CustomEvent('tree:show'));
+			showFactionTreeTab(tab.dataset.tree!);
 		});
+	});
+
+	document.addEventListener('click', (e) => {
+		const link = (e.target as HTMLElement).closest<HTMLElement>('[data-show-tree]');
+		if (!link) return;
+		showFactionTreeTab(link.dataset.showTree!);
 	});
 </script>

@@ -162,6 +162,36 @@ export interface FactionData {
 }
 
 // ──────────────────────────────────────────────
+// Arrakis – Villages, Resources, Special Regions
+// ──────────────────────────────────────────────
+
+export interface VillageTrait {
+  id: string;
+  name: string;
+  effects: string[];
+}
+
+export interface LandsraadTier {
+  range: string;
+  effects: string[];
+}
+
+export interface Resource {
+  id: string;
+  name: string;
+  info: string[];
+  deficitEffects?: string[];
+  landsraadTiers?: LandsraadTier[];
+}
+
+export interface SpecialRegion {
+  id: string;
+  name: string;
+  note?: string;
+  effects: string[];
+}
+
+// ──────────────────────────────────────────────
 // Community patch delta types
 // ──────────────────────────────────────────────
 
