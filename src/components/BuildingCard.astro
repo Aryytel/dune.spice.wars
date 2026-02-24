@@ -36,7 +36,7 @@ const FACTION_LABELS: Record<FactionId, string> = {
   <li>
     <strong>Development required</strong>:{' '}
     {dev
-      ? <a class="link" target="_blank" href={`/developments#${dev.id}`}>{dev.name}</a>
+      ? <a class="link" target="_blank" href={`${import.meta.env.BASE_URL}developments#${dev.id}`}>{dev.name}</a>
       : 'None'}
   </li>
   {building.prerequisite && (
@@ -45,11 +45,11 @@ const FACTION_LABELS: Record<FactionId, string> = {
   <li>
     <strong>Factions</strong>:{' '}
     {building.factions === 'all'
-      ? <a class="link" target="_blank" href="/factions">All</a>
+      ? <a class="link" target="_blank" href={`${import.meta.env.BASE_URL}factions`}>All</a>
       : building.factions.map((f, i) => (
           <>
             {i > 0 && ' | '}
-            <a class="link" target="_blank" href={`/${f}`}>{FACTION_LABELS[f]}</a>
+            <a class="link" target="_blank" href={`${import.meta.env.BASE_URL}${f}`}>{FACTION_LABELS[f]}</a>
           </>
         ))
     }

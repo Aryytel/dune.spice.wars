@@ -21,11 +21,12 @@ const RESOURCES = [
   { key: 'authority'     as const, label: 'Authority',      anchor: 'authority' },
 ];
 
+const base = import.meta.env.BASE_URL;
 const parts = RESOURCES.filter(r => cost[r.key] != null);
 const html = parts.length === 0
   ? 'None'
   : parts
-      .map(r => `${cost[r.key]} <a class="link" target="_blank" href="/arrakis#${r.anchor}">${r.label}</a>`)
+      .map(r => `${cost[r.key]} <a class="link" target="_blank" href="${base}arrakis#${r.anchor}">${r.label}</a>`)
       .join(' | ');
 ---
 <span set:html={html} />

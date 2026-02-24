@@ -6,7 +6,7 @@ import { factions } from "../data/factions";
 <div class="faction-links">
   {
     factions.map((faction) => (
-      <a href={`/${faction.id}`} class="faction-card">
+      <a href={`${import.meta.env.BASE_URL}${faction.id}`} class="faction-card">
         <div class="faction-card__img">
           <Image src={faction.logo!} alt={`${faction.name} logo`} />
         </div>

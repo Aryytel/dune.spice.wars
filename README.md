@@ -2,13 +2,11 @@
 
 An unofficial wiki for the game *Dune: Spice Wars*, covering factions, buildings, units, developments, councilors, and more.
 
-**Live site:** https://dunespicewars.github.io/
-
 ---
 
 ## A note on origins
 
-This site was originally built by **Mr. Sandman** — a one-person effort to document everything in Dune: Spice Wars. Without that groundwork, none of this would exist. Thank you.
+This site is a rebuild of the original Duneopedia, created by **Mr. Sandman**. The original is still up at [dunespicewars.github.io](https://dunespicewars.github.io/). None of this would exist without that groundwork.
 
 ---
 
@@ -16,11 +14,13 @@ This site was originally built by **Mr. Sandman** — a one-person effort to doc
 
 | Layer | Tool |
 |---|---|
-| Static site generator | [Astro](https://astro.build) |
+| Static site generator | [Astro](https://astro.build) v5 |
+| Language | TypeScript |
 | Runtime | Node.js v22+ |
-| CSS | SASS/SCSS (pre-compiled) |
+| Image optimization | [Sharp](https://sharp.pixelplumbing.com) |
+| CSS | Pre-compiled from SASS (HTML5UP Editorial) |
+| JS | [Responsive Tools](https://github.com/ajlkn/responsive-tools) |
 | Icons | [Font Awesome](https://fontawesome.io) |
-| JS utilities | [jQuery](https://jquery.com), [Responsive Tools](https://github.com/ajlkn/responsive-tools) |
 | Template | [Editorial by HTML5 UP](https://html5up.net) |
 | Hosting | GitHub Pages |
 | CI/CD | GitHub Actions |
@@ -42,4 +42,4 @@ npm run preview  # preview the production build locally
 
 - **Template:** Editorial by HTML5 UP (html5up.net | @ajlkn) — CCA 3.0 license
 - **Icons:** Font Awesome (fontawesome.io)
-- **JS:** jQuery (jquery.com), Responsive Tools (github.com/ajlkn/responsive-tools)
+- **JS:** Responsive Tools (github.com/ajlkn/responsive-tools)

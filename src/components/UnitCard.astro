@@ -46,13 +46,13 @@ const { health, power, armor, supply } = unit.stats;
   <li>
     <strong>Development required</strong>:{' '}
     {dev
-      ? <a class="link" target="_blank" href={`/developments#${dev.id}`}>{dev.name}</a>
+      ? <a class="link" target="_blank" href={`${import.meta.env.BASE_URL}developments#${dev.id}`}>{dev.name}</a>
       : 'None'}
   </li>
   {building && (
     <li>
       <strong>Building required</strong>:{' '}
-      <a class="link" target="_blank" href={`/buildings#${building.id}`}>{building.name}</a>
+      <a class="link" target="_blank" href={`${import.meta.env.BASE_URL}buildings#${building.id}`}>{building.name}</a>
     </li>
   )}
   {unit.prerequisite && (

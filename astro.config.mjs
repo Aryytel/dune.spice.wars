@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://dune.spice.wars.github.io/',
-  base: '/',
+  site: 'https://dune-spice-wars.github.io',
+  base: '/duneopedia/',
   output: 'static',
   build: {
     format: 'file',
