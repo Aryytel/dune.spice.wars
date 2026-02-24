@@ -1,4 +1,4 @@
-# Duneopedia — Dune: Spice Wars Wiki
+# [Duneopedia — Dune: Spice Wars Wiki](https://dune-spice-wars.github.io/duneopedia/)
 
 An unofficial wiki for the game *Dune: Spice Wars*, covering factions, buildings, units, developments, councilors, and more.
 
@@ -43,3 +43,4 @@ npm run preview  # preview the production build locally
 - **Template:** Editorial by HTML5 UP (html5up.net | @ajlkn) — CCA 3.0 license
 - **Icons:** Font Awesome (fontawesome.io)
 - **JS:** Responsive Tools (github.com/ajlkn/responsive-tools)
+
